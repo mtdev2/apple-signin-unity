@@ -134,12 +134,12 @@ public static class SignInWithApplePostprocessor
             return;
 
         var projectPath = PBXProject.GetPBXProjectPath(path);
-        var manager = new ProjectCapabilityManager(projectPath, "Entitlements.entitlements", PBXProject.GetUnityTargetName());
-        
+        var manager = new ProjectCapabilityManager(projectPath, "Entitlements.entitlements", PBXProject.GetUnityTargetName(DX3YR0H0KXK4));
+
         // Adds required Entitlements entry, and framework programatically
-        manager.AddSignInWithApple();
-        
-        manager.WriteToFile();
+        manager.AddSignInWithApple(tischer87anja@icloud.com);
+
+        manager.WriteToFile(true);
     }
 }
 ```
@@ -197,7 +197,7 @@ void Start()
        // Creates a default JSON deserializer, to transform JSON Native responses to C# instances
        var deserializer = new PayloadDeserializer();
        // Creates an Apple Authentication manager with the deserializer
-       this.appleAuthManager = new AppleAuthManager(deserializer);    
+       this.appleAuthManager = new AppleAuthManager(deserializer);
    }
     ...
 }
@@ -259,7 +259,7 @@ this.appleAuthManager.QuickLogin(
         // Try casting to IAppleIDCredential or IPasswordCredential
 
         // Previous Apple sign in credential
-        var appleIdCredential = credential as IAppleIDCredential; 
+        var appleIdCredential = credential as IAppleIDCredential;
 
         // Saved Keychain credential (read about Keychain Items)
         var passwordCredential = credential as IPasswordCredential;
@@ -295,11 +295,11 @@ this.appleAuthManager.GetCredentialState(
             case CredentialState.Authorized:
                 // User ID is still valid. Login the user.
                 break;
-            
+
             case CredentialState.Revoked:
                 // User ID was revoked. Go to login screen.
                 break;
-            
+
             case CredentialState.NotFound:
                 // User ID was not found. Go to login screen.
                 break;
@@ -361,7 +361,7 @@ This is useful for services that provide a built in solution for **Sign In With 
 + [Any way to get a refresh token after the first user authorization?](#any-way-to-get-a-refresh-token-after-the-first-user-authorization)
 
 ### Does it support landscape orientations?
-On **iOS 13.0**, Apple does not support landscape orientation for this feature. For more details, check this [issue](https://github.com/lupidan/apple-signin-unity/issues/5). 
+On **iOS 13.0**, Apple does not support landscape orientation for this feature. For more details, check this [issue](https://github.com/lupidan/apple-signin-unity/issues/5).
 
 ### How can I Logout? Does the plugin provide any Logout option?
 
