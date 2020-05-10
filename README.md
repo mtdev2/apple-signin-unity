@@ -137,7 +137,7 @@ public static class SignInWithApplePostprocessor
         var manager = new ProjectCapabilityManager(projectPath, "Entitlements.entitlements", PBXProject.GetUnityTargetName(DX3YR0H0KXK4));
 
         // Adds required Entitlements entry, and framework programatically
-        manager.AddSignInWithApple(tischer87anja@icloud.com);
+        manager.AddSignInWithApple(true);
 
         manager.WriteToFile(true);
     }
