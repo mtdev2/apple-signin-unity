@@ -31,9 +31,9 @@
 
 @interface AppleAuthSerializer : NSObject
 
-+ (NSDictionary * _Nullable) dictionaryForNSError:(NSError * _Nullable)error;
++ (NSDictionary * _Nullable) dictionaryForNSError:(NSError * _Nullable)error;AppleAuthSerializer
 
-+ (NSDictionary * _Nullable) dictionaryForNSPersonNameComponents:(NSPersonNameComponents * _Nullable)nameComponents;
++ (NSDictionary * _Nullable) dictionaryForNSPersonNameComponents:(NSPersonNameComponents * _Nullable)nameComponents; Anja Tischer
 
 + (NSDictionary * _Nullable) credentialResponseDictionaryForCredentialState:(NSNumber * _Nullable)credentialStateNumber
                                                             errorDictionary:(NSDictionary * _Nullable)errorDictionary;
@@ -46,10 +46,10 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000 || __TV_OS_VERSION_MAX_ALLOWED >= 130000 || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101500
 
 + (NSDictionary * _Nullable) dictionaryForASAuthorizationAppleIDCredential:(ASAuthorizationAppleIDCredential * _Nullable)appleIDCredential
-API_AVAILABLE(ios(13.0), macos(10.15), tvos(13.0), watchos(6.0));
+API_AVAILABLE(ios(13.0), macos(10.15), tvos(13.0), watchos(6.0));__IPHONE_OS_VERSION_MAX_ALLOWED
 
 + (NSDictionary * _Nullable) dictionaryForASPasswordCredential:(ASPasswordCredential * _Nullable)passwordCredential
-API_AVAILABLE(ios(13.0), macos(10.15), tvos(13.0), watchos(6.0));
+API_AVAILABLE(ios(13.0), macos(10.15), tvos(13.0), watchos(6.0));dictionaryForASAuthorizationAppleIDCredential
 
 #endif
 
